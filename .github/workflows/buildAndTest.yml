@@ -27,6 +27,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build
-      run: mvn quarkus:build
+      run: mvn -B package
     - name: Test
-      run: mvn quarkus:test 
+      run: mvn -B test
