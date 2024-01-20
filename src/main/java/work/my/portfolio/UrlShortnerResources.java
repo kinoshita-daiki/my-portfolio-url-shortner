@@ -4,7 +4,6 @@ import java.util.zip.CRC32;
 
 import jakarta.inject.Inject;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -38,9 +37,7 @@ public class UrlShortnerResources {
 	@Produces(MediaType.APPLICATION_JSON)
 	@POST
 	public Shortner getShortnerByLongUrl(
-			@NotBlank(message = "URL may not be blank") //
-			@Pattern(regexp = "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})", //
-					message = "Invalid URL") String longUrl) {
+			@NotBlank(message = "URL may not be blank") String longUrl) {
 		return service.findByLongUrl(longUrl)//
 				.orElseGet(() -> {//
 					var checksum = new CRC32();
