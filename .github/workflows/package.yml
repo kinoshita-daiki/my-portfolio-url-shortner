@@ -20,6 +20,6 @@ jobs:
           run: ./mvnw -B package -Dquarkus.package.type=uber-jar 
         - uses: actions/upload-artifact@v3
           with:
-            name: runnableJar
+            name: url_back_runnableJar
             path: target/*.jar
       
