@@ -26,9 +26,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Permissison
+      run: chmod +x mvnw
     - name: Build
       run: ./mvnw -B compile
     - name: Test
       run: ./mvnw -B test
-    - name: Package
-      run: ./mvnw -B package -Dquarkus.package.type=uber-jar
