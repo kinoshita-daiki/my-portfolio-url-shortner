@@ -7,6 +7,7 @@ env:
   DOCKER_PORT: 8080:8080
   CONTAINET_NAME: url-shortner
   TAG: url-shortner_prod
+  ENV_ENDOPOINT: quarkus.dynamodb.endpoint-override=${{ secrets.DYNAMO_ENDPOINT }}
 
 jobs:
   deploy:
@@ -36,4 +37,4 @@ jobs:
             docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker stop ${{ env.CONTAINET_NAME }}
             docker pull ${{ secrets.DOCKER_REPOSITORY_USER }}/${{ secrets.DOCKER_REPOSITORY_NAME }}:${{ env.TAG }}
-            docker run --rm -d -p ${{ env.DOCKER_PORT }} --name ${{ env.CONTAINET_NAME }} ${{ secrets.DOCKER_REPOSITORY_USER }}/${{ secrets.DOCKER_REPOSITORY_NAME }}:${{ env.TAG }}
+            docker run --rm -d -e ${{ env.ENV_ENDOPOINT }} -p ${{ env.DOCKER_PORT }} --name ${{ env.CONTAINET_NAME }} ${{ secrets.DOCKER_REPOSITORY_USER }}/${{ secrets.DOCKER_REPOSITORY_NAME }}:${{ env.TAG }}
