@@ -1,66 +1,38 @@
-# quarkus
+[![Deploy Status](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions/workflows/deploy.yml/badge.svg)](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions?query=workflow%3ADeploy)
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+[![MyPipeline Status](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions/workflows/buildAndTest.yml/badge.svg)](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions?query=workflow%3AMyPipeline)
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+ポートフォリオとして作成した、URL短縮サイトのバックエンドサーバ側のリポジトリです。<br>
+クライアントサーバ側は[こちらです](https://github.com/kinoshita-daiki/my-portfolio-url-shortner-client)
 
-## Running the application in dev mode
+- [URL短縮サイト](#URL短縮サイト)
+- [URL短縮の仕方](#URL短縮の仕方)
+- [特徴](#特徴)
+- [使用技術](#使用技術)
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+# URL短縮サイト
+下記よりWebアプリをご利用ください。<br>
+https://kinoshitadaiki.work/us/urlShortner
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+> [!NOTE]
+> このWebアプリはポートフォリオとして作成されています。機能は簡素であることにご留意ください。
 
-## Packaging and running the application
+# URL短縮の仕方
+1. 入力欄に短縮したいURLを入力します。
+2. 変換ボタンを押下します。
+3. 画面に短縮されたURLが表示されます。
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+# 特徴
+REST APIを作成し、他サーバからの呼び出しを想定しています。<br>
+プッシュされた場合、自動でコンパイル、テスト、テストレポートを出力するパイプラインを構築しています。<br>
+また手動トリガーでパッケージの作成(RunnableJar)、サーバへの自動デプロイが可能です。
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/quarkus-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Related Guides
-
-- RESTEasy Reactive ([guide](https://quarkus.io/guides/resteasy-reactive)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
-
-### RESTEasy Reactive Qute
-
-Create your web page using Quarkus RESTEasy Reactive & Qute
-
-[Related guide section...](https://quarkus.io/guides/qute#type-safe-templates)
+# 使用技術
+- Java(17)
+- Quarkus
+	- JSON-P/JSON-B
+	- JAX-RS
+- Amazon DynamoDB
+- Docker
+- Maven
+- lombok
