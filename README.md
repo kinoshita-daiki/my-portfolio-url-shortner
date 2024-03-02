@@ -2,6 +2,8 @@
 
 [![MyPipeline Status](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions/workflows/buildAndTest.yml/badge.svg)](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions?query=workflow%3AMyPipeline)
 
+[API Doc](https://kinoshita-daiki.github.io/my-portfolio-url-shortner/)
+
 ポートフォリオとして作成した、URL短縮サイトのバックエンドサーバ側のリポジトリです。<br>
 クライアントサーバ側は[こちらです](https://github.com/kinoshita-daiki/my-portfolio-url-shortner-client)
 
