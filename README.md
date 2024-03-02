@@ -1,6 +1,6 @@
-[![Deploy Status](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions/workflows/deploy.yml/badge.svg)](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions?query=workflow%3ADeploy)
-
 [![MyPipeline Status](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions/workflows/buildAndTest.yml/badge.svg)](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions?query=workflow%3AMyPipeline)
+
+[![Deploy Status](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions/workflows/deploy.yml/badge.svg)](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/actions?query=workflow%3ADeploy)
 
 [API Doc](https://kinoshita-daiki.github.io/my-portfolio-url-shortner/)
 
