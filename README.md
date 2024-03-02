@@ -36,3 +36,5 @@ REST APIを作成し、他サーバからの呼び出しを想定しています
 - Docker
 - Maven
 - lombok
+
+その他については[pom.xml](https://github.com/kinoshita-daiki/my-portfolio-url-shortner/blob/main/pom.xml)を参照してください。
